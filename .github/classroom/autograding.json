@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Test value1",
+      "setup": "g++ -o a.out ./Lab/Lab11-Function.cpp",
+      "run": "./a.out",
+      "input": "153",
+      "output": "Pass.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test value2",
+      "setup": "g++ -o a.out ./Lab/Lab11-Function.cpp",
+      "run": "./a.out",
+      "input": "370",
+      "output": "Pass.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test value3",
+      "setup": "g++ -o a.out ./Lab/Lab11-Function.cpp",
+      "run": "./a.out",
+      "input": "1634",
+      "output": "Pass.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test value4",
+      "setup": "g++ -o a.out ./Lab/Lab11-Function.cpp",
+      "run": "./a.out",
+      "input": "144",
+      "output": "Not Pass.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}

@@ -26,9 +26,57 @@
 
 #include <stdio.h>
 
+int cal( int number ){
+
+    int unit = 0 ;
+    //หาจำนวนหลัก ของเลขที่กรอกกมา
+    if ( number >= 1000 ) {
+        unit = 4 ;
+    }
+    else if (number >= 100) {
+        unit = 3 ;
+    }
+    else if (number >= 10) {
+        unit = 2 ;
+    }
+    // หาตัวเลขในแต่ละหน่วย แยกเป็นหลัก ๆ
+    int thousand = number / 1000 ;
+    int hundred  = ( number - thousand * 1000) / 100 ; // 1
+    int ten = ( number - ( ( thousand * 1000 ) + ( hundred * 100 ) ) ) / 10 ;// 5
+    int one = ( number - ( ( thousand * 1000 ) + ( hundred * 100 ) + ( ten * 10 ) ) );// 3
+
+    int thousand_power = thousand , hundred_power = hundred , ten_power = ten , one_power = one ;
+
+    for (int i = 1; i < unit ; i++) {
+
+        thousand_power = thousand_power * thousand ;
+
+        hundred_power = hundred_power * hundred ;
+
+        ten_power = ten_power * ten ;
+
+        one_power = one_power  * one ;
+
+    }
+    
+    return thousand_power + hundred_power + ten_power + one_power ;
+
+}
+
 int main() {
 
-    //--| YOUR CODE HERE
+    int number ;
+
+    printf( "Enter Number:\n" ) ;
+    scanf( "%d",&number ) ;
+    int asw = cal(number);
+    // printf ( "%d",cal( number ) ) ;
+    if ( number == asw ) {
+        printf( "Pass." ) ;
+    }
+    else if ( number != asw ) {
+       printf( "Not Pass." ) ;
+    }
 
     return 0 ;
 }//end main function
